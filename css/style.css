@@ -126,7 +126,7 @@ hr.item-divider{
   opacity: 0.7;
 }
 
-
+/*Add to cart*/
 #count .p1[data-count]:after{
   position:absolute;
   right:10%;

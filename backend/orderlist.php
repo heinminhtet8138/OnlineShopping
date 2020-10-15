@@ -72,9 +72,6 @@
                     <a href="orderdetail.php?voucherno=<?= $order['voucherno'] ?>" class="btn btn-info btn-sm">Detail</a>
                   </td>
                 </tr>
-
-
-
               <?php
                 }
               ?>

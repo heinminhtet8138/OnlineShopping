@@ -3,10 +3,10 @@
 	session_start();
 	include 'backend/dbconnect.php';
 
-	$sql = "SELECT * FROM subcategories";
+	$sql = "SELECT * FROM categories";
 	$stmt=$pdo->prepare($sql);
 	$stmt->execute();
-	$subcategories = $stmt->fetchAll();
+	$categories = $stmt->fetchAll();
 
 ?>
 <!DOCTYPE html>
@@ -42,9 +42,9 @@
 
 
 <?php 
-	foreach ($subcategories as $subcategory) {
+	foreach ($categories as $category) {
 ?>
-	<a class="dropdown-item" href="categories.php?id=<?= $subcategory['id']?>"><?= $subcategory['name'] ?></a>
+	<a class="dropdown-item" href="categories.php?id=<?= $category['id']?>"><?= $category['name'] ?></a>
 
 <?php	
 	}
@@ -79,12 +79,14 @@
 					<li class="nav-item"><a href="login.php" class="nav-link">Login</a></li>
 					<li class="nav-item"><a href="register.php" class="nav-link">Register</a></li>
 				<?php } ?>
-					<li class="nav-item"><a href="checkout.php" class="nav-link" id="count">
-						<span class="p1 fa-stack has-badge" id="item_count">
-							<i class="p3 fa fa-shopping-cart fa-stack-1x xfa-inverse"></i>
-						</span>
+					<li class="nav-item">
+						<a href="checkout.php" class="nav-link" id="count">
+							<span class="p1 fa-stack has-badge" id="item_count">
+								<i class="p3 fa fa-shopping-cart fa-stack-1x xfa-inverse"></i>
+							</span>
 						
-					</a></li>
+						</a>
+					</li>
 				</ul>
 				
 			</div>
